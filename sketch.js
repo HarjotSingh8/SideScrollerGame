@@ -10,6 +10,7 @@ let cloudSpeed=2
 let img;
 
 function setup() {
+  cloud = []
   bgcl=color(97,137, 244);
   player=new Player()
   speed = createVector()

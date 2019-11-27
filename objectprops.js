@@ -46,6 +46,7 @@ class Player {
     }
   }
   display(){
+    fill(200, 200, 200)
     if(playerMotion==1) {
       this.loc.x+=speed.x;
     }

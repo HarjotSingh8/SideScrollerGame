@@ -7,11 +7,10 @@ let platformWidth=10;
 let decel=0.5;
 let maxSpeed=10;
 let cloudSpeed=2
-let cloudTexture;
-let groundTexture;
+let img;
 
 function setup() {
-  cloud = []
+  cloud=[]
   bgcl=color(97,137, 244);
   player=new Player()
   speed = createVector()
@@ -21,15 +20,18 @@ function setup() {
   createWorld();
   createCloud();
   world.push([0, 600, random(1280, 2000)]);
-  cloudTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
-  cloudTexture.hide()
-  grassTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  im = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  im.hide()
+  grassTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/grass.png?raw=true');
   grassTexture.hide()
-  cliffSideTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
-  cliffSideTexture.hide()
-  waterTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
-  waterTexture.hide()
+  cliffTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cliff_side.png?raw=true');
+  cliffTexture.hide()
+  cliffTextureMirror = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cliff_side_mirror.png?raw=true');
+  cliffTextureMirror.hide()
   background(bgcl);
+  fill(10, 10, 10);
+  noStroke();
+
 
 }
 
@@ -39,12 +41,20 @@ function draw() {
   background(bgcl);
   input();
   checkMotion();
+
   calcSpeed();
   drawCloud();
-  drawWorld();
+  drawCliffs();
+  if(speed.y>-1) {
+    player.display();
+    drawGrass();
+  }
+  else {
+    drawGrass();
+    player.display();
+  }
   //calcSpeed();
   //drawCloud();
-  player.display();
   if(player.loc.y>800) {
     player.loc.y=400;
     speed.y=0

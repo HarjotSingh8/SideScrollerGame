@@ -15,7 +15,7 @@ function setup() {
   player=new Player()
   speed = createVector()
   createCanvas(windowWidth, windowHeight)
-  frameRate(800);
+  frameRate(60);
   noStroke();
   createWorld();
   createCloud();

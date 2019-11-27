@@ -54,7 +54,7 @@ function drawCliffs() {
     if(playerMotion==0)
     world[i][0]-=speed.x
     if(world[i][0]+world[i][2]<0) {
-      world[  i][0]=random(windowWidth, winddowWidth+500);
+      world[  i][0]=random(windowWidth, windowWidth+500);
       world[i][1]=100*floor(random(3, 7));
       world[i][2]=100*random(4, 12);
     }

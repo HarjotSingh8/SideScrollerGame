@@ -18,7 +18,7 @@ function drawCloud() {
       cloud[i][0]=random(1280, 1500);
       cloud[i][1]=100*floor(random(0, 4));
     }
-    image(im, cloud[i][0], cloud[i][1], 844*2/3, 426*2/3);
+    image(cloudTexture, cloud[i][0], cloud[i][1], 844*2/3, 426*2/3);
   }
 }
 

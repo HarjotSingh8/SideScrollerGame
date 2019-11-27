@@ -7,7 +7,8 @@ let platformWidth=10;
 let decel=0.5;
 let maxSpeed=10;
 let cloudSpeed=2
-let img;
+let cloudTexture;
+let groundTexture;
 
 function setup() {
   cloud = []
@@ -20,8 +21,14 @@ function setup() {
   createWorld();
   createCloud();
   world.push([0, 600, random(1280, 2000)]);
-  im = createImg('https://www.pngix.com/pngfile/big/0-6829_free-png-download-cloud-png-images-background-png.png');
-  im.hide()
+  cloudTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  cloudTexture.hide()
+  grassTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  grassTexture.hide()
+  cliffSideTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  cliffSideTexture.hide()
+  waterTexture = createImg('https://github.com/HarjotSingh8/SideScrollerGame/blob/master/cloud.png?raw=true');
+  waterTexture.hide()
   background(bgcl);
 
 }
